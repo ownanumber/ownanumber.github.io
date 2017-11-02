@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Own A Number</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>         <!-- jQuery (https://jquery.com/download/) -->
+
+    <link rel="icon" href="./favicon.ico">
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- Google web font "Open Sans" -->
+    <!-- <link rel="stylesheet" href="./font-awesome-4.5.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="./stylesheets/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <!-- Bootstrap style -->
+    <!-- <link rel="stylesheet" href="app/stylesheets/hero-slider-style.css"> -->
+    <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
+    <!-- <link rel="stylesheet" href="app/stylesheets/magnific-popup.css"> -->
+    <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
+    <!-- <link rel="stylesheet" href="app/stylesheets/tooplate-style.css"> -->
+    <!--<link rel="stylesheet" href="./stylesheets/app.css">-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
+</head>
+
+    <body>
+
+        <!-- Content -->
+        <div class="cd-hero">
+
+            <!-- Navigation -->
+            <div class="cd-slider-nav">
+                <nav class="navbar">
+                    <div class="tm-navbar-bg">
+
+                        <a class="navbar-brand text-uppercase" href=""><i class="fa fa-calculator tm-brand-icon"></i>Own A Number</a>
+
+                        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                            &#9776;
+                        </button>
+                        <div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item active selected">
+                                    <a class="nav-link" href="#0" data-no="1" id="start">0-100<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#0" data-no="2">Exotic Numbers</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#0" data-no="3">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#0" data-no="4">Links</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#0" data-no="5">Withdraw</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </nav>
+            </div>
+
+            <ul class="cd-hero-slider">
+
+                <!-- Page 1 -->
+                <li class="selected">
+                    <div class="cd-full-width">
+                        <div class="container-fluid js-tm-page-content" data-page-no="1">
+                        <center><table style="width:100%">
+                        <tr><td align="center" colspan="6"><h2 class="tm-text-title tm-gallery-title tm-white"><span class="tm-white">Own Your Favorite Number On The Ethereum Blockchain</span></h2></td></tr>
+                        <tr><td align="center" colspan="6"><p>Please read FAQ before proceeding below. Click on each number to learn more about them!</p><br></td></tr>
+
+                        <tr><td align="right" colspan="3">Number to own:&nbsp;&nbsp;&nbsp;</td>
+                            <td align="left" colspan="3"><input type="text" maxlength="3" id="inputnumber" placeholder="e.g. 42"></td></tr>
+                        <tr><td align="right" colspan="3">Bid amount (in ETH):&nbsp;&nbsp;&nbsp;</td>
+                            <td align="left" colspan="3"><input type="text" maxlength="5" id="inputbid" placeholder="min: 0.001"></td></tr>
+                        <tr><td align="right" colspan="3">User name (or even a link):&nbsp;&nbsp;&nbsp;</td>
+                            <td align="left" colspan="3"><input type="text" maxlength="200" id="inputstring" placeholder="e.g. Jack the Ripper"></td></tr>
+                        <tr><td align="center" colspan="6"><br><button onclick="App.bid();">Submit</button></td></tr>
+                        <tr><td align="center" colspan="6"><span id="status" style="color:yellow">&nbsp;</span></td></tr>
+
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/0" target="_blank">0</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/1" target="_blank">1</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/2" target="_blank">2</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/3" target="_blank">3</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/4" target="_blank">4</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/5" target="_blank">5</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="0"></td>
+                        <td align="center" class="long_log" id="1"></td>
+                        <td align="center" class="long_log" id="2"></td>
+                        <td align="center" class="long_log" id="3"></td>
+                        <td align="center" class="long_log" id="4"></td>
+                        <td align="center" class="long_log" id="5"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/6" target="_blank">6</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/7" target="_blank">7</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/8" target="_blank">8</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/9" target="_blank">9</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/10" target="_blank">10</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/11_(number)" target="_blank">11</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="6"></td>
+                        <td align="center" class="long_log" id="7"></td>
+                        <td align="center" class="long_log" id="8"></td>
+                        <td align="center" class="long_log" id="9"></td>
+                        <td align="center" class="long_log" id="10"></td>
+                        <td align="center" class="long_log" id="11"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/12_(number)" target="_blank">12</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/13_(number)" target="_blank">13</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/14_(number)" target="_blank">14</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/15_(number)" target="_blank">15</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/16_(number)" target="_blank">16</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/17_(number)" target="_blank">17</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="12"></td>
+                        <td align="center" class="long_log" id="13"></td>
+                        <td align="center" class="long_log" id="14"></td>
+                        <td align="center" class="long_log" id="15"></td>
+                        <td align="center" class="long_log" id="16"></td>
+                        <td align="center" class="long_log" id="17"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/18_(number)" target="_blank">18</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/19_(number)" target="_blank">19</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/20_(number)" target="_blank">20</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/21_(number)" target="_blank">21</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/22_(number)" target="_blank">22</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/23_(number)" target="_blank">23</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="18"></td>
+                        <td align="center" class="long_log" id="19"></td>
+                        <td align="center" class="long_log" id="20"></td>
+                        <td align="center" class="long_log" id="21"></td>
+                        <td align="center" class="long_log" id="22"></td>
+                        <td align="center" class="long_log" id="23"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/24_(number)" target="_blank">24</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/25_(number)" target="_blank">25</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/26_(number)" target="_blank">26</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/27_(number)" target="_blank">27</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/28_(number)" target="_blank">28</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/29_(number)" target="_blank">29</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="24"></td>
+                        <td align="center" class="long_log" id="25"></td>
+                        <td align="center" class="long_log" id="26"></td>
+                        <td align="center" class="long_log" id="27"></td>
+                        <td align="center" class="long_log" id="28"></td>
+                        <td align="center" class="long_log" id="29"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/30_(number)" target="_blank">30</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/31_(number)" target="_blank">31</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/32_(number)" target="_blank">32</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/33_(number)" target="_blank">33</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/34_(number)" target="_blank">34</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/35_(number)" target="_blank">35</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="30"></td>
+                        <td align="center" class="long_log" id="31"></td>
+                        <td align="center" class="long_log" id="32"></td>
+                        <td align="center" class="long_log" id="33"></td>
+                        <td align="center" class="long_log" id="34"></td>
+                        <td align="center" class="long_log" id="35"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/36_(number)" target="_blank">36</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/37_(number)" target="_blank">37</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/38_(number)" target="_blank">38</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/39_(number)" target="_blank">39</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/40_(number)" target="_blank">40</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/41_(number)" target="_blank">41</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="36"></td>
+                        <td align="center" class="long_log" id="37"></td>
+                        <td align="center" class="long_log" id="38"></td>
+                        <td align="center" class="long_log" id="39"></td>
+                        <td align="center" class="long_log" id="40"></td>
+                        <td align="center" class="long_log" id="41"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/42_(number)" target="_blank">42</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/43_(number)" target="_blank">43</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/44_(number)" target="_blank">44</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/45_(number)" target="_blank">45</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/46_(number)" target="_blank">46</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/47_(number)" target="_blank">47</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log"><div id="42"></div></td>
+                        <td align="center" class="long_log" id="43"></td>
+                        <td align="center" class="long_log" id="44"></td>
+                        <td align="center" class="long_log" id="45"></td>
+                        <td align="center" class="long_log" id="46"></td>
+                        <td align="center" class="long_log" id="47"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/48_(number)" target="_blank">48</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/49_(number)" target="_blank">49</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/50_(number)" target="_blank">50</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/51_(number)" target="_blank">51</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/52_(number)" target="_blank">52</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/53_(number)" target="_blank">53</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="48"></td>
+                        <td align="center" class="long_log" id="49"></td>
+                        <td align="center" class="long_log" id="50"></td>
+                        <td align="center" class="long_log" id="51"></td>
+                        <td align="center" class="long_log" id="52"></td>
+                        <td align="center" class="long_log" id="53"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/54_(number)" target="_blank">54</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/55_(number)" target="_blank">55</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/56_(number)" target="_blank">56</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/57_(number)" target="_blank">57</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/58_(number)" target="_blank">58</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/59_(number)" target="_blank">59</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="54"></td>
+                        <td align="center" class="long_log" id="55"></td>
+                        <td align="center" class="long_log" id="56"></td>
+                        <td align="center" class="long_log" id="57"></td>
+                        <td align="center" class="long_log" id="58"></td>
+                        <td align="center" class="long_log" id="59"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/60_(number)" target="_blank">60</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/61_(number)" target="_blank">61</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/62_(number)" target="_blank">62</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/63_(number)" target="_blank">63</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/64_(number)" target="_blank">64</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/65_(number)" target="_blank">65</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="60"></td>
+                        <td align="center" class="long_log" id="61"></td>
+                        <td align="center" class="long_log" id="62"></td>
+                        <td align="center" class="long_log" id="63"></td>
+                        <td align="center" class="long_log" id="64"></td>
+                        <td align="center" class="long_log" id="65"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/66_(number)" target="_blank">66</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/67_(number)" target="_blank">67</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/68_(number)" target="_blank">68</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/69_(number)" target="_blank">69</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/70_(number)" target="_blank">70</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/71_(number)" target="_blank">71</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="66"></td>
+                        <td align="center" class="long_log" id="67"></td>
+                        <td align="center" class="long_log" id="68"></td>
+                        <td align="center" class="long_log" id="69"></td>
+                        <td align="center" class="long_log" id="70"></td>
+                        <td align="center" class="long_log" id="71"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/72_(number)" target="_blank">72</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/73_(number)" target="_blank">73</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/74_(number)" target="_blank">74</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/75_(number)" target="_blank">75</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/76_(number)" target="_blank">76</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/77_(number)" target="_blank">77</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="72"></td>
+                        <td align="center" class="long_log" id="73"></td>
+                        <td align="center" class="long_log" id="74"></td>
+                        <td align="center" class="long_log" id="75"></td>
+                        <td align="center" class="long_log" id="76"></td>
+                        <td align="center" class="long_log" id="77"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/78_(number)" target="_blank">78</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/79_(number)" target="_blank">79</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/80_(number)" target="_blank">80</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/81_(number)" target="_blank">81</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/82_(number)" target="_blank">82</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/83_(number)" target="_blank">83</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="78"></td>
+                        <td align="center" class="long_log" id="79"></td>
+                        <td align="center" class="long_log" id="80"></td>
+                        <td align="center" class="long_log" id="81"></td>
+                        <td align="center" class="long_log" id="82"></td>
+                        <td align="center" class="long_log" id="83"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/84_(number)" target="_blank">84</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/85_(number)" target="_blank">85</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/86_(number)" target="_blank">86</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/87_(number)" target="_blank">87</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/88_(number)" target="_blank">88</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/89_(number)" target="_blank">89</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="84"></td>
+                        <td align="center" class="long_log" id="85"></td>
+                        <td align="center" class="long_log" id="86"></td>
+                        <td align="center" class="long_log" id="87"></td>
+                        <td align="center" class="long_log" id="88"></td>
+                        <td align="center" class="long_log" id="89"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/90_(number)" target="_blank">90</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/91_(number)" target="_blank">91</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/92_(number)" target="_blank">92</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/93_(number)" target="_blank">93</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/94_(number)" target="_blank">94</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/95_(number)" target="_blank">95</a></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="90"></td>
+                        <td align="center" class="long_log" id="91"></td>
+                        <td align="center" class="long_log" id="92"></td>
+                        <td align="center" class="long_log" id="93"></td>
+                        <td align="center" class="long_log" id="94"></td>
+                        <td align="center" class="long_log" id="95"></td>
+                        </tr>
+                        <tr>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/96_(number)" target="_blank">96</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/97_(number)" target="_blank">97</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/98_(number)" target="_blank">98</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/99_(number)" target="_blank">99</a></td>
+                        <td align="center"><a class="ex1" href="https://en.wikipedia.org/wiki/100_(number)" target="_blank">100</a></td>
+                        <td align="center"></td>
+                        </tr>
+                        <tr>
+                        <td align="center" class="long_log" id="96"></td>
+                        <td align="center" class="long_log" id="97"></td>
+                        <td align="center" class="long_log" id="98"></td>
+                        <td align="center" class="long_log" id="99"></td>
+                        <td align="center" class="long_log" id="100"></td>
+                        <td align="center"></td>
+                        </tr>
+                    </table>
+                </center></div></div>
+
+                </li>
+
+                <!-- Page 2 -->
+                <li>
+                    <div class="cd-full-width">
+                        <div class="container-fluid js-tm-page-content" data-page-no="2">
+                            <center><table style="width:100%">
+                            <tr><td align="center" colspan="3"><h2 class="tm-text-title tm-gallery-title tm-white"><span class="tm-white">Own Your Favorite Number On The Ethereum Blockchain</span></h2></td></tr>
+                            <tr><td align="center" colspan="3"><p>These are numbers that are more exotic. Click on each number to learn more about them!</p><br></td></tr>
+
+                            <tr><td align="center" colspan="3">
+                                <center><table style="width:100%">
+                                    <tr><td align="right">Bid amount (in ETH):&nbsp;&nbsp;&nbsp;</td>
+                                        <td align="left"><input type="text" maxlength="5" id="inputbid2" placeholder="min: 0.001"></td></tr>
+                                    <tr><td align="right">User name (or even a link):&nbsp;&nbsp;&nbsp;</td>
+                                        <td align="left"><input type="text" maxlength="200" id="inputstring2" placeholder="e.g. Jack the Ripper"></td></tr>
+                                </table></center>
+                            </td></tr>
+
+                            <tr><td align="center" colspan="3"><br><button onclick="App.bid2();">Submit</button></td></tr>
+                            <tr><td align="center" colspan="3"><span id="status2" style="color:yellow">&nbsp;</span></td></tr>
+
+                            <tr>
+                            <td align="center"><input type="radio" name="exotic" value="101" checked>&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/E_(mathematical_constant)" target="_blank"><i>e</i></a></td>
+                            <td align="center"><input type="radio" name="exotic" value="102">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/%E2%88%921" target="_blank">-1</a></td>
+                            <td align="center"><input type="radio" name="exotic" value="103">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Imaginary_number" target="_blank"><i>i</i></a></td>
+                            </tr>
+                            <tr>
+                            <td align="center" class="long_log" id="101"></td>
+                            <td align="center" class="long_log" id="102"></td>
+                            <td align="center" class="long_log" id="103"></td>
+                            </tr>
+                            <tr>
+                            <td align="center"><input type="radio" name="exotic" value="104">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Pi" target="_blank">&pi;</a></td>
+                            <td align="center"><input type="radio" name="exotic" value="105">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/666_(number)" target="_blank">666</a></td>
+                            <td align="center"><input type="radio" name="exotic" value="106">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Square_root_of_2" target="_blank">√2</a></td>
+                            </tr>
+                            <tr>
+                            <td align="center" class="long_log" id="104"></td>
+                            <td align="center" class="long_log" id="105"></td>
+                            <td align="center" class="long_log" id="106"></td>
+                            </tr>
+                            <tr>
+                            <td align="center"><input type="radio" name="exotic" value="107">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant" target="_blank"><i>&gamma;</i></a></td>
+                            <td align="center"><input type="radio" name="exotic" value="108">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Ap%C3%A9ry%27s_constant" target="_blank">&zeta;(3)</a></td>
+                            <td align="center"><input type="radio" name="exotic" value="109">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Golden_ratio" target="_blank"><i>&phi;</i></a></td>
+                            </tr>
+                            <tr>
+                            <td align="center" class="long_log" id="107"></td>
+                            <td align="center" class="long_log" id="108"></td>
+                            <td align="center" class="long_log" id="109"></td>
+                            </tr>
+                            <tr>
+                            <td align="center"><input type="radio" name="exotic" value="110">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Planck_constant" target="_blank"><i>h</i></a></td>
+                            <td align="center"><input type="radio" name="exotic" value="111">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/1_%2B_2_%2B_3_%2B_4_%2B_%E2%8B%AF" target="_blank">-1/12</a></td>
+                            <td align="center"><input type="radio" name="exotic" value="112">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/196_(number)" target="_blank">196</a></td>
+                            </tr>
+                            <tr>
+                            <td align="center" class="long_log" id="110"></td>
+                            <td align="center" class="long_log" id="111"></td>
+                            <td align="center" class="long_log" id="112"></td>
+                            </tr>
+                            <tr>
+                            <td align="center"><input type="radio" name="exotic" value="113">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Avogadro_constant" target="_blank"><i>N</i><sub>A</sub></a></td>
+                            <td align="center"><input type="radio" name="exotic" value="114">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Gravitational_constant" target="_blank"><i>G</i></a></td>
+                            <td align="center"><input type="radio" name="exotic" value="115">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Googol" target="_blank">Googol</a></td>
+                            </tr>
+                            <tr>
+                            <td align="center" class="long_log" id="113"></td>
+                            <td align="center" class="long_log" id="114"></td>
+                            <td align="center" class="long_log" id="115"></td>
+                            </tr>
+                            <tr>
+                            <td align="center"><input type="radio" name="exotic" value="116">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/365_(number)" target="_blank">365</a></td>
+                            <td align="center"><input type="radio" name="exotic" value="117">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Khinchin%27s_constant" target="_blank"><i>K</i><sub>0</sub></a></td>
+                            <td align="center"><input type="radio" name="exotic" value="118">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/555_(telephone_number)" target="_blank">555</a></td>
+                            </tr>
+                            <tr>
+                            <td align="center" class="long_log" id="116"></td>
+                            <td align="center" class="long_log" id="117"></td>
+                            <td align="center" class="long_log" id="118"></td>
+                            </tr>
+                            <tr>
+                            <td align="center"><input type="radio" name="exotic" value="119">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Basel_problem" target="_blank">&pi;<sup>2</sup>/6</a></td>
+                            <td align="center"><input type="radio" name="exotic" value="120">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/163_(number)" target="_blank">163</a></td>
+                            <td align="center"><input type="radio" name="exotic" value="121">&nbsp;&nbsp;<a class="ex1" href="https://en.wikipedia.org/wiki/Bernoulli_number" target="_blank"><i>B</i><sub>n</sub></a></td>
+                            </tr>
+                            <tr>
+                            <td align="center" class="long_log" id="119"></td>
+                            <td align="center" class="long_log" id="120"></td>
+                            <td align="center" class="long_log" id="121"></td>
+                            </tr>
+
+                            </table></center>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Page 3 -->
+                <li>
+                    <div class="cd-full-width">
+                        <div class="container-fluid js-tm-page-content" data-page-no="3">
+                                        <h2 class="tm-text-title tm-gallery-title"><span class="tm-white">Frequently Asked Questions</span></h2>
+                                        <p class="tm-text"><span class="tm-white">
+                                            <strong>1. What is this??</strong>
+                                            <br>A. This is a place where you can bid via auction to own your favorite number instantaneously (just kidding, 15 seconds-ish corresponding to stochastic <a href="https://etherscan.io/chart/blocktime" target="_blank">block time</a>) on Ethereum's blockchain. The ownership will directly be displayed below each number for everyone to see that you've been the boss of that number. Note that the website reads firsthandedly from Ethereum's blockchain itself in an automatic fashion, which means as long as the Ethereum blockchain is live, the proof of your ownership will also be live. In other words, things here are decentralized, transparent, and secure!
+                                            <br><br><strong>2. How do I own a number??</strong>
+                                            <br>A. You can either use <a href="http://metamask.io" target="_blank">MetaMask</a> or <a href="http://github.com/ethereum/mist/releases" target="_blank">Mist</a> to allow communication between your account and the Ethereum blockchain. After you've configured correctly, you can bid x amount of ETH (where x starts from 0.001 and so on) to own a number. Note if someone bids higher than you did after you bought a number, then you'll lose ownership and get your ETH back, which you'll be able to retrieve from the <strong>Withdraw</strong> section of the website. Conversely, if you want to own a number that is owned by someone else already, then you'll have to bid higher in order to obtain ownership.
+                                            <br><br><strong>3. Why would I own a number??</strong>
+                                            <br>A. Because they're awesome stuff. <a href="https://www.youtube.com/watch?v=a_mQBFtM_Y8" target="_blank">Go for it</a>! Not only do they drive our daily lives, they have driven the history of mankind. The Pythagorean people, for instance, have even killed a man (supposedly), just because of square root of two. Prime numbers and modular arithmetic have fueled <a href="https://stackoverflow.com/questions/439870/why-are-primes-important-in-cryptography" target="_blank">cryptography</a>. Imaginary numbers, transcendental numbers, Bernoulli numbers, etc. all of them impact our lives in some way. Aren't politics, business, economy, and <a href="https://www.youtube.com/watch?v=iFDe5kUUyT0" target="_blank">money</a> all about simple number games in the end? :o
+                                            <br><br><strong>4. Is there a white paper??</strong>
+                                            <br>A. Nope.
+                                            <br><br><strong>5. Is there a yellow paper??</strong>
+                                            <br>A. Nope.
+                                            <br><br><strong>6. Is there a blue paper??</strong>
+                                            <br>A. <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Sure</a>.
+                                            <br><br><strong>7. What's an example of a cool number??</strong>
+                                            <br>A. Seven is pretty cool, and that's why the FAQ stops here.
+                                        </span>
+                                        </p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Page 4 -->
+                <li>
+                    <div class="cd-full-width">
+                        <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="4">
+                            <div class="row tm-white-box-margin-b">
+                                <div class="col-xs-12">
+                                    <div class="tm-flex">
+                                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding">
+                                            <h2 class="tm-text-title">Interesting Links About Numbers</h2>
+                                            <p class="tm-text">1. <a target="_blank" href="https://www.youtube.com/watch?v=wymmCdLdPvM">The Uncracked Problem with 33</a></p>
+                                            <p class="tm-text">2. <a target="_blank" href="https://www.youtube.com/watch?v=w-I6XTVZXww">ASTOUNDING: 1 + 2 + 3 + 4 + 5 + ... = -1/12</a></p>
+                                            <p class="tm-text">3. <a target="_blank" href="https://www.youtube.com/watch?v=bN8PE3eljdA">What's special about 196?</a></p>
+                                            <p class="tm-text">4. <a target="_blank" href="https://www.youtube.com/watch?v=PQDvEJFdY1U">383 is cool</a></p>
+                                            <p class="tm-text">5. <a target="_blank" href="https://www.youtube.com/watch?v=D6tINlNluuY">42 and Douglas Adams</a></p>
+                                            <p class="tm-text">6. <a target="_blank" href="https://www.youtube.com/watch?v=sJVivjuMfWA">Pi and Buffon's Matches</a></p>
+                                            <p class="tm-text">7. <a target="_blank" href="https://www.youtube.com/watch?v=AuA2EAgAegE">e (Euler's number)</a></p>
+                                            <p class="tm-text">8. <a target="_blank" href="https://www.youtube.com/watch?v=9tlHQOKMHGA">What does i^i = ?</a></p>
+                                            <p class="tm-text">9. <a target="_blank" href="https://www.youtube.com/watch?v=seUU2bZtfgM">Transcendental Numbers</a></p>
+                                            <p class="tm-text">10. <a target="_blank" href="https://www.youtube.com/watch?v=83ofi_L6eAo">Tau replaces Pi</a></p>
+                                            <p class="tm-text">11. <a target="_blank" href="https://www.youtube.com/watch?v=2dzS_LXvYA0">Avogadro's Number (Mole)</a></p>
+                                            <p class="tm-text">12. <a target="_blank" href="https://www.youtube.com/watch?v=l4bmZ1gRqCc">58 and Other Confusing Numbers</a></p>
+                                            <p class="tm-text">13. <a target="_blank" href="https://www.youtube.com/watch?v=Noo4lN-vSvw">The Four 4s</a></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row tm-white-box-margin-b">
+                                <div class="col-xs-12">
+                                    <div class="tm-flex">
+                                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
+                                            <h2 class="tm-text-title">Music</h2>
+                                            <p class="tm-text"><iframe width="350" height="197" src="https://www.youtube.com/embed/OMq9he-5HUU" frameborder="0" allowfullscreen></iframe></p>
+                                            <p class="tm-text"><iframe width="350" height="197" src="https://www.youtube.com/embed/4rA4ZRErflE" frameborder="0" allowfullscreen></iframe></p>
+                                        </div>
+                                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
+                                            <h2 class="tm-text-title">Books</h2>
+                                            <p class="tm-text"><i>Number: The Language of Science</i> - Tobias Dantzig</p>
+                                            <p class="tm-text"><i>How Not to Be Wrong: The Power of Mathematical Thinking</i> - Jordan Ellenberg</p>
+                                            <p class="tm-text"><i>Gödel, Escher, Bach: An Eternal Golden Braid</i> - Douglas Hofstadter</p>
+                                            <p class="tm-text"><i>Innumeracy: Mathematical Illiteracy and its Consequences</i> - John Allen Paulos</p>
+                                            <p class="tm-text"><i>The Housekeeper and the Professor</i> - Yoko Ogawa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> <!-- .cd-full-width -->
+
+                </li>
+
+                <!-- Page 5 -->
+                <li>
+                    <div class="cd-full-width">
+                        <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="5">
+                            <center><table style="width:100%">
+                                <tr><h2 class="tm-text-title tm-gallery-title tm-white"><span class="tm-white">Withdrawal Availability</span></h2></tr>
+                                <tr><td align="center"><p id="youraccount">Your account: N/A</p></td></tr>
+                                <tr><td align="center"><p id="withdrawalbalance"></p></td></tr>
+                                <tr><td align="center"><br><button onclick="App.withdraw()">Initiate Withdrawal</button></td></tr>
+                                <tr><td align="center"><span id="status3" style="color:yellow">&nbsp;</span></td></tr>
+                            </table></center>
+                        </div>
+
+                    </div> <!-- .cd-full-width -->
+                </li>
+            </ul> <!-- .cd-hero-slider -->
+
+            <footer class="tm-footer">
+
+                <div class="tm-social-icons-container text-xs-center">
+                    <a href="http://facebook.com/kcgenius" class="tm-social-link" target="_blank"><i class="fa fa-facebook"></i></a>
+                </div>
+
+                <p class="tm-copyright-text" style="font-size: 12px;">Copyright &copy; 2017 Kevin Choi</p>
+
+            </footer>
+
+        </div> <!-- .cd-hero -->
+
+
+        <!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
+        <div id="loader-wrapper">
+
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+
+        </div>
+
+        <!-- load JS files -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
+        <script src="./app.js" async></script>
+        <!--<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+        <script src="./javascripts/hero-slider-main.js"></script>          <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
+        <script src="./javascripts/jquery.magnific-popup.min.js"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
+
+        <script>
+        for(var j=0; j < document.getElementsByClassName("ex1").length; j++) {
+            document.getElementsByClassName("ex1")[j].style.color = randomColor({luminosity: "dark"});
+        }   // RANDOM COLOR
+        </script>
+
+        <script>
+
+            function adjustHeightOfPage(pageNo) {
+
+                var offset = 80;
+                var pageContentHeight = 0;
+
+                var pageType = $('div[data-page-no="' + pageNo + '"]').data("page-type");
+
+                if( pageType != undefined && pageType == "gallery") {
+                    pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .tm-img-gallery-container").height();
+                }
+                else {
+                    pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height() + 20;
+                }
+
+                if($(window).width() >= 992) { offset = 120; }
+                else if($(window).width() < 480) { offset = 40; }
+
+                // Get the page height
+                var totalPageHeight = $('.cd-slider-nav').height()
+                                        + pageContentHeight + offset
+                                        + $('.tm-footer').height();
+
+                // Adjust layout based on page height and window height
+                if(totalPageHeight > $(window).height())
+                {
+                    $('.cd-hero-slider').addClass('small-screen');
+                    $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
+                }
+                else
+                {
+                    $('.cd-hero-slider').removeClass('small-screen');
+                    $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
+                }
+            }
+
+            /*
+                Everything is loaded including images.
+            */
+            $(window).load(function(){
+
+                adjustHeightOfPage(1); // Adjust page height
+
+                /* Gallery One pop up
+                -----------------------------------------*/
+                $('.gallery-one').magnificPopup({
+                    delegate: 'a', // child items selector, by clicking on it popup will open
+                    type: 'image',
+                    gallery:{enabled:true}
+                });
+
+				/* Gallery Two pop up
+                -----------------------------------------*/
+				$('.gallery-two').magnificPopup({
+                    delegate: 'a',
+                    type: 'image',
+                    gallery:{enabled:true}
+                });
+
+                /* Gallery Three pop up
+                -----------------------------------------*/
+                $('.gallery-three').magnificPopup({
+                    delegate: 'a',
+                    type: 'image',
+                    gallery:{enabled:true}
+                });
+
+                /* Collapse menu after click
+                -----------------------------------------*/
+                $('#tmNavbar a').click(function(){
+                    $('#tmNavbar').collapse('hide');
+
+                    adjustHeightOfPage($(this).data("no")); // Adjust page height
+                });
+
+                /* Browser resized
+                -----------------------------------------*/
+                $( window ).resize(function() {
+                    var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
+
+                    // wait 3 seconds
+                    setTimeout(function() {
+                        adjustHeightOfPage( currentPageNo );
+                    }, 1000);
+
+                });
+
+                // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
+                $('body').addClass('loaded');
+
+            });
+
+        </script>
+
+</body>
+</html>
