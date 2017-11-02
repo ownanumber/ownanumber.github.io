@@ -83,12 +83,12 @@
                         <tr><td align="center" colspan="6"><h2 class="tm-text-title tm-gallery-title tm-white"><span class="tm-white">Own Your Favorite Number On The Ethereum Blockchain</span></h2></td></tr>
                         <tr><td align="center" colspan="6"><p>Please read FAQ before proceeding below. Click on each number to learn more about them!</p><br></td></tr>
 
-                        <tr><td align="right" colspan="3">Number to own:&nbsp;&nbsp;&nbsp;</td>
-                            <td align="left" colspan="3"><input type="text" maxlength="3" id="inputnumber" placeholder="e.g. 42"></td></tr>
-                        <tr><td align="right" colspan="3">Bid amount (in ETH):&nbsp;&nbsp;&nbsp;</td>
-                            <td align="left" colspan="3"><input type="text" maxlength="5" id="inputbid" placeholder="min: 0.001"></td></tr>
-                        <tr><td align="right" colspan="3">User name (or even a link):&nbsp;&nbsp;&nbsp;</td>
-                            <td align="left" colspan="3"><input type="text" maxlength="200" id="inputstring" placeholder="e.g. Jack the Ripper"></td></tr>
+                        <tr><td align="right" colspan="3" class="wordphone">Number to own:&nbsp;&nbsp;&nbsp;</td>
+                            <td align="left" colspan="3"><input type="text" class="inputphone" maxlength="3" id="inputnumber" placeholder="e.g. 42"></td></tr>
+                        <tr><td align="right" colspan="3" class="wordphone">Bid amount (ETH):&nbsp;&nbsp;&nbsp;</td>
+                            <td align="left" colspan="3"><input type="text" class="inputphone" maxlength="5" id="inputbid" placeholder="min: 0.001"></td></tr>
+                        <tr><td align="right" colspan="3" class="wordphone">User name (or even a link):&nbsp;&nbsp;&nbsp;</td>
+                            <td align="left" colspan="3"><input type="text" class="inputphone" maxlength="200" id="inputstring" placeholder="e.g. Jack the Ripper"></td></tr>
                         <tr><td align="center" colspan="6"><br><button onclick="App.bid();">Submit</button></td></tr>
                         <tr><td align="center" colspan="6"><span id="status" style="color:yellow">&nbsp;</span></td></tr>
 
@@ -379,10 +379,10 @@
 
                             <tr><td align="center" colspan="3">
                                 <center><table style="width:100%">
-                                    <tr><td align="right">Bid amount (in ETH):&nbsp;&nbsp;&nbsp;</td>
-                                        <td align="left"><input type="text" maxlength="5" id="inputbid2" placeholder="min: 0.001"></td></tr>
-                                    <tr><td align="right">User name (or even a link):&nbsp;&nbsp;&nbsp;</td>
-                                        <td align="left"><input type="text" maxlength="200" id="inputstring2" placeholder="e.g. Jack the Ripper"></td></tr>
+                                    <tr><td align="right" class="wordphone">Bid amount (ETH):&nbsp;&nbsp;&nbsp;</td>
+                                        <td align="left"><input type="text" class="inputphone" maxlength="5" id="inputbid2" placeholder="min: 0.001"></td></tr>
+                                    <tr><td align="right" class="wordphone">User name (or even a link):&nbsp;&nbsp;&nbsp;</td>
+                                        <td align="left"><input type="text" class="inputphone" maxlength="200" id="inputstring2" placeholder="e.g. Jack the Ripper"></td></tr>
                                 </table></center>
                             </td></tr>
 
@@ -524,12 +524,12 @@
                                     <div class="tm-flex">
                                         <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
                                             <h2 class="tm-text-title">Music</h2>
-                                            <p class="tm-text"><iframe width="350" height="197" src="https://www.youtube.com/embed/OMq9he-5HUU" frameborder="0" allowfullscreen></iframe></p>
-                                            <p class="tm-text"><iframe width="350" height="197" src="https://www.youtube.com/embed/4rA4ZRErflE" frameborder="0" allowfullscreen></iframe></p>
+                                            <br><div class="videoWrapper"><iframe width="350" height="197" src="https://www.youtube.com/embed/OMq9he-5HUU" frameborder="0" allowfullscreen></iframe></div>
+                                            <br><div class="videoWrapper"><iframe width="350" height="197" src="https://www.youtube.com/embed/4rA4ZRErflE" frameborder="0" allowfullscreen></iframe></div>
                                         </div>
                                         <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
                                             <h2 class="tm-text-title">Books</h2>
-                                            <p class="tm-text"><i>Number: The Language of Science</i> - Tobias Dantzig</p>
+                                            <br><p class="tm-text"><i>Number: The Language of Science</i> - Tobias Dantzig</p>
                                             <p class="tm-text"><i>How Not to Be Wrong: The Power of Mathematical Thinking</i> - Jordan Ellenberg</p>
                                             <p class="tm-text"><i>Gödel, Escher, Bach: An Eternal Golden Braid</i> - Douglas Hofstadter</p>
                                             <p class="tm-text"><i>Innumeracy: Mathematical Illiteracy and its Consequences</i> - John Allen Paulos</p>
