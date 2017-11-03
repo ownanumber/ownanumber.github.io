@@ -35948,7 +35948,7 @@ window.App = {
           this.setStatus("Please check your values of submission, and try again.");
       } else {
           OwnANumber.deployed().then(function(instance) {
-              self.setStatus("Transaction taking place ...");
+              self.setStatus("Transaction taking place ... (please wait)");
               return instance.bid(inputnumber, inputstring, {value: web3.toWei(inputbid, "finney"), from: account, gas: 500000});
           }).then(function(result) {
               self.setStatus("Transaction sent! Please refresh to see result.");
@@ -35969,7 +35969,7 @@ window.App = {
           this.setStatus2("Please check your values of submission, and try again.");
       } else {
           OwnANumber.deployed().then(function(instance) {
-              self.setStatus2("Transaction taking place ...");
+              self.setStatus2("Transaction taking place ... (please wait)");
               return instance.bid(inputnumber2, inputstring2, {value: web3.toWei(inputbid2, "finney"), from: account, gas: 500000});
           }).then(function(result) {
               self.setStatus2("Transaction sent! Please refresh to see result.");
@@ -35985,7 +35985,7 @@ window.App = {
 
       if(withdrawalbal > 0) {
           OwnANumber.deployed().then(function(instance) {
-              self.setStatus3("Transaction taking place ...");
+              self.setStatus3("Transaction taking place ... (please wait)");
               return instance.withdraw({from: account});
           }).then(function(result) {
               self.setStatus3("Transaction sent!");
