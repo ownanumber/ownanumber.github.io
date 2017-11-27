@@ -35884,7 +35884,7 @@ window.App = {
     });
 
     OwnANumber.deployed().then(function(instance) {
-        instance.allEvents({fromBlock: 0, toBlock: 'latest'}).get(function(error, result) {
+        instance.allEvents({fromBlock: 1000000, toBlock: 'latest'}).get(function(error, result) {
             if(error) {
                 console.error(error);
             } else {
@@ -35911,7 +35911,7 @@ window.App = {
 
   refreshStatus: function() {
       OwnANumber.deployed().then(function(instance) {
-          instance.HighestBidIncreased({}, {fromBlock: 0, toBlock: 'latest'}).get(function(error, result) {
+          instance.HighestBidIncreased({}, {fromBlock: 1000000, toBlock: 'latest'}).get(function(error, result) {
               if(error) {
                   console.error(error);
               } else {
