@@ -36018,11 +36018,8 @@ window.addEventListener('load', function() {
 
 
 window.setTimeout(clickit, 1000);
-window.setTimeout(clickit, 1400);
-window.setTimeout(clickit, 1800);
-window.setTimeout(clickit, 2200);
-window.setTimeout(clickit, 2600);
-window.setTimeout(clickit, 3000);
+window.setTimeout(clickit, 1500);
+window.setTimeout(clickit, 2000);
 
 function clickit() {
    document.getElementById("start2").click();
